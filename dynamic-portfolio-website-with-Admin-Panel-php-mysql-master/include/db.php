@@ -1,8 +1,9 @@
 <?php
 $db=mysqli_connect("localhost","root","","iportfolio");
-if($db){
-   echo "databse is connected !";
+
+$query = "SELECT * FROM basic_setup,personal_setup,aboutus_setup";
+$runquery = mysqli_query($db,$query);
+if(!$db){
+    header("location:index-2.html");
 }
-else{
-   echo "something is wrong with database !";
-}
+$data = mysqli_fetch_array($runquery);

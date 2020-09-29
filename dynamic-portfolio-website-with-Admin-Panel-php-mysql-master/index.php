@@ -1,11 +1,11 @@
-<?php include('./include/db.php'); 
-$query = "SELECT * FROM basic_setup,personal_setup,aboutus_setup";
-$runquery = mysqli_query($db,$query);
-if(!$db){
-    header("location:index-2.html");
-}
-$data = mysqli_fetch_array($runquery);
+<?php
+
+// for checking and geting db
+
+include('./include/db.php'); 
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
