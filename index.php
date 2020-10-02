@@ -36,12 +36,6 @@ include('./include/db.php');
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: iPortfolio - v1.2.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
     <style>
         #hero {
             background: url(assets/img/<?=$data['homewallpaper']?>);
@@ -102,6 +96,7 @@ include('./include/db.php');
                 <ul>
                     <li class=""><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
                     <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+                    <li><a href="#skills"><i class="bx bx-user"></i> <span>Skill</span></a></li>
                     <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
                     <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
                     <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
@@ -168,7 +163,7 @@ include('./include/db.php');
         <!-- ======= Facts Section ======= -->
 
         <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills section-bg">
+        <section id="skills" class="skills section-bg skills">
             <div class="container">
 
                 <div class="section-title">
