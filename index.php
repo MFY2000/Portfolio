@@ -209,42 +209,52 @@ while($data3=mysqli_fetch_array($runquery3)){
                     <div class="col-lg-6" data-aos="fade-up">
                         <h3 class="resume-title">Education</h3>
                         <?php
-                    $query4 = "SELECT * FROM resume WHERE category='e'";
-$runquery4= mysqli_query($db,$query4);
-while($data4=mysqli_fetch_array($runquery4)){
-    ?>
-                    <div class="resume-item">
+                            $query4 = "SELECT * FROM resume WHERE category='e'";
+                            $runquery4= mysqli_query($db,$query4);
+                            $i = 0;
+                            while($data4=mysqli_fetch_array($runquery4)){
+                            $i++;
+                        ?>
+                    
+                        <div class="resume-item" 
+                        <?php
+                        if($i%2==0){
+                            echo "data-aos-delay='100'"; }
+                        ?>
+                        >
                             <h4><?=$data4['title']?></h4>
                             <h5><?=$data4['year']?></h5>
                             <p><em><?=$data4['ogname']?></em></p>
                             <p><?=$data4['workdesc']?></p>
                         </div>
-                                <?php
-}
-                    ?>
+                
+                        <?php
+                            }
+                        ?>
                         
                         
                         
                     </div>
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="resume-title">Professional Experience</h3>
                         
                         <?php
-                    $query4 = "SELECT * FROM resume WHERE category='pe'";
-$runquery4= mysqli_query($db,$query4);
-while($data4=mysqli_fetch_array($runquery4)){
-    ?>
+                            // $query4 = "SELECT * FROM resume WHERE category='pe'";
+                            // $runquery4= mysqli_query($db,$query4);
+                            // while($data4=mysqli_fetch_array($runquery4)){
+                        ?>
+                    
                     <div class="resume-item">
                             <h4><?=$data4['title']?></h4>
                             <h5><?=$data4['year']?></h5>
                             <p><em><?=$data4['ogname']?></em></p>
                             <p><?=$data4['workdesc']?></p>
-                        </div>
-                                <?php
-}
-                    ?>
                     </div>
-                </div>
+                        <?php
+                            // }
+                        ?>
+                    </div>
+                </div> -->
 
             </div>
         </section><!-- End Resume Section -->
@@ -374,7 +384,7 @@ while($data5=mysqli_fetch_array($runquery5)){
             </div>
 -->
             <div class="credits">
-                Developed by <a href="#">Monu Giri</a>
+                Developed by <a href="#">Muhammmad Fahad</a>
             </div>
         </div>
     </footer><!-- End  Footer -->

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2020 at 06:41 AM
+-- Generation Time: Oct 12, 2020 at 04:20 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- PHP Version: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,7 +43,7 @@ CREATE TABLE `aboutus_setup` (
 --
 
 INSERT INTO `aboutus_setup` (`id`, `shortdesc`, `heading`, `subheading`, `longdesc`, `website`, `dob`) VALUES
-(1, 'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.', 'UI/UX Designer & Web Developer.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.', 'https://www.devninja.com', '14 July, 1999');
+(1, 'I\'m a Student and I want to become expert in programming.', 'UI/UX Designer & Web Developer.', 'Freelancing ', 'Software Engineer Interns are entry-level professionals who are gaining hands-on experience in a software development company. Job responsibilities of a Software Engineer Intern are understanding client requirements, writing and testing code, helping to develop software solutions, and updating their job knowledge by using the latest development tools. Based on our collection of resumes in the field, most Software Engineer Interns should hold the following skillset: coding abilities, problem solving, teamwork, the willingness to learn new things and to follow instructions, and computer proficiency. Successful example resumes make display of a Bachelor\'s Degree in computer science or information technology. ', '', '20 June, 2020');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `username`, `user_id`, `user_pass`, `user_access`) VALUES
-(1, 'Monu Boss', 'monu@admin.com', 'admin123', 1);
+(1, 'Muhammad Fahad', 'Fahad@admin.com', '0041462fa', 1);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `basic_setup` (
 --
 
 INSERT INTO `basic_setup` (`id`, `title`, `description`, `keyword`, `icon`) VALUES
-(1, 'Alex Smith', 'i am a web developer, i make website and php web portals .', 'web development,php development', 'icons8-computer-support-64.png');
+(1, 'Muhammad Fahad', 'i am a web developer, i make website and php web portals .', 'web development,php development', 'icons8-computer-support-64.png');
 
 -- --------------------------------------------------------
 
@@ -136,7 +137,7 @@ CREATE TABLE `personal_setup` (
 --
 
 INSERT INTO `personal_setup` (`id`, `profilepic`, `name`, `twitter`, `facebook`, `instagram`, `skype`, `linkedin`, `github`, `homewallpaper`, `professions`, `location`, `mobile`, `emailid`) VALUES
-(1, 'profile-img.jpg', 'Alex Smith', '', 'https://www.facebook.com/oyeitsmg', 'https://www.instagram.com/oyeitsmg', '@oyeitsmg', 'https://in.linkedin.com/in/whomonugiri', 'https://github.com/whomonugiri/', 'hero-bg.jpg', 'Web Developer,PHP Developer,Youtuber,Graphic Designer', 'C-537 Mahavir Enclave Part 3, Street No 45 New Delhi 110059', '+917548935467', 'alex@gmail.com');
+(1, 'Profile.jpg', 'Muhammad Fahad', '', 'https://www.facebook.com/profile.php?id=100007993337979', 'https://www.instagram.com/muhammad_fahad0014/', '', 'https://www.linkedin.com/in/fahad-yahya-3953711b0/', 'https://github.com/MFY2000', '25407.png', 'Web Developer,PHP Developer,Graphic Designer', '4th Floor Yusuf Manzil Bhimpura, 4th Floor Yusuf Manzil Bhimpura', '03322520302', 'Fahad.yahya18@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -182,9 +183,9 @@ CREATE TABLE `resume` (
 --
 
 INSERT INTO `resume` (`id`, `category`, `title`, `year`, `ogname`, `workdesc`) VALUES
-(7, 'e', 'Class 12th', '2016 - 2018', 'Navjeewan Academy Senior Secondary School, CBSE', 'it was fun'),
-(8, 'e', 'Pursuing Bachelor of Computer Application', '2018-2021', 'Indira Gandhi National Open University, New Delhi', ''),
-(9, 'pe', 'Data Operator', '2020 - Present', 'Akhand Jyoti Services Pvt. Ltd.', '');
+(8, 'e', 'Matriculation (SSC) Science Group', '2016', 'Noble Grammar School, Karachi', 'Affiliated with Board of Secondary Education(BSEK), Pakistan'),
+(9, 'e', 'Intermediate (HSC) Pre - Engineering ', '2017 - 2019', 'Nabi Baga Government College.', 'Affiliated with Board of Intermediate Education Karachi (BIEK), Pakistan.'),
+(10, 'e', 'Bachelor of Software (BSSE) Software Engineering.', '2019 - Present', 'Muhammad Ali Jinnah University (MAJU)', 'Affiliated with Higher Education Commission (HEC),Pakistan\r\n');
 
 -- --------------------------------------------------------
 
@@ -338,7 +339,7 @@ ALTER TABLE `portfolio`
 -- AUTO_INCREMENT for table `resume`
 --
 ALTER TABLE `resume`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `skills`
