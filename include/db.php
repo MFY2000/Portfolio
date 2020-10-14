@@ -1,36 +1,35 @@
 <?php
 $db=mysqli_connect("localhost","root","");
 
-if ($db->select_db('iportfolio') === false) {
-    $sql = "CREATE DATABASE iportfolio";
-    if ($db->query($sql) === TRUE) {
-        // echo "Database created successfully";
-
-        $query = '';
-        $sqlScript = file('C:\xampp\htdocs\Portfolio\include\sql.sql');
+if (!($db->select_db('portfolio'))) {
+    $sql = "CREATE DATABASE portfolio";
+    if ($db->query($sql)) {
+        $output = '';
+        $file_data = file('C:\xampp\htdocs\Portfolio\include\iportfolio.sql');
         
-        foreach ($sqlScript as $line)	{
+        foreach($file_data as $row){
+            $start_character = substr(trim($row), 0, 2);
         
-            $startWith = substr(trim($line), 0 ,2);
-            $endWith = substr(trim($line), -1 ,1);
-            
-            if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-                continue;
-            }
+            if($start_character != '--' || $start_character != '/*' || $start_character != '//' || $row != ''){
+                $output = $output . $row;
+                $end_character = substr(trim($row), -1, 1);
                 
-            $query = $query . $line;
-            if ($endWith == ';') {
-                mysqli_query($db,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-                $query= '';		
+                if($end_character == ';'){
+                    mysqli_query($db, $output);
+                    $output = '';
+                }
             }
-        }
+        } 
+        echo '<script>alert("")</script>';
+
     }
 }
+
 
 $query = "SELECT * FROM basic_setup,personal_setup,aboutus_setup";
 $runquery = mysqli_query($db,$query);
 if(!$db){
-    // header("location:index-2.html");
+    header("location:index-2.html");
 }  else {
     // echo "Error creating database: " . $conn->error;
 }
