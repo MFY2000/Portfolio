@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,15 +10,14 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const icons = ["bitcoin", "calendar", "card", "discord"]
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className='flex min-h-screen flex-row items-center justify-between p-10 pt-0'>
+        <main className='flex min-h-screen flex-row p-5 pt-0'>
           <div className='flex-none w-14 h-14 '>
             <p className='.horizontal-line'></p>
-            <p>G</p>
-            <p>G</p>
-            <p>G</p>
+            {icons.map((icon) => <Image src={`./assets/icon/${icon}.svg`} alt={icon} width={25} height={25}  />)}            
           </div>
           {children}
         </main>
